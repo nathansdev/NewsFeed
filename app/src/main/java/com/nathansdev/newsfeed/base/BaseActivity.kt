@@ -3,7 +3,10 @@ package com.nathansdev.newsfeed.base
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-abstract class BaseActivity : AppCompatActivity() {
+/**
+ * Base Activity class that any Activity extends.
+ */
+abstract class BaseActivity : AppCompatActivity(), MvpView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,5 +21,11 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    override fun showMessageInToast(message: String) {
+    }
+
+    override fun showMessageInDialog(message: String) {
     }
 }

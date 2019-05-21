@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -31,17 +33,17 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //support libraries
-    implementation "androidx.appcompat:appcompat:$androidx_version"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    // RxJava
-    api "io.reactivex.rxjava2:rxjava:$rxjava_version"
-    api "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    //support libraries
+    implementation "androidx.appcompat:appcompat:$androidx_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
+
+    //kotlin
+    compile "androidx.core:core-ktx:$androidktx_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Timber logger
     api "com.jakewharton.timber:timber:$timber_version"
@@ -50,30 +52,33 @@ dependencies {
     api "com.squareup.okhttp3:okhttp:$okhttp_version"
     api "com.squareup.okhttp3:logging-interceptor:$interceptor_version"
 
-    //Retrofit
-    api "com.squareup.retrofit2:retrofit:$retrofit_version"
-    api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
-    api "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
-    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    // Retrofit with Gson and rxJava Adapters
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // RxJava and RxAndroid
+    compile "io.reactivex.rxjava2:rxjava:$rxjava2_version"
+    compile "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
     //Butterknife
     implementation "com.jakewharton:butterknife:$butterknife_version"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
 
-    //kotlin
-    compile "androidx.core:core-ktx:$androidktx_version"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
     //glide
     implementation "com.github.bumptech.glide:glide:$glide_version"
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
-    // Dagger dependencies, do not change order.
-    implementation "com.google.dagger:dagger-android:$dagger_version"
-    implementation "com.google.dagger:dagger-android-support:$dagger_version"
-    // if you use the support libraries
-    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    //dagger
+    implementation "com.google.dagger:dagger:$dagger2_version"
+    implementation "com.google.dagger:dagger-android:$dagger2_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger2_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger2_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger2_version"
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    implementation 'javax.inject:javax.inject:1'
+
 }
 repositories {
     mavenCentral()

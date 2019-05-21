@@ -8,7 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-class BaseFragment : Fragment() {
+/**
+ * Base fragment class that any fragment extends.
+ */
+abstract class BaseFragment : Fragment(), MvpView {
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
@@ -31,5 +35,11 @@ class BaseFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+    }
+
+    override fun showMessageInToast(message: String) {
+    }
+
+    override fun showMessageInDialog(message: String) {
     }
 }
