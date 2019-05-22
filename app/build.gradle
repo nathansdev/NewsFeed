@@ -61,10 +61,6 @@ dependencies {
     compile "io.reactivex.rxjava2:rxjava:$rxjava2_version"
     compile "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
-    //Butterknife
-    implementation "com.jakewharton:butterknife:$butterknife_version"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
-
     //glide
     implementation "com.github.bumptech.glide:glide:$glide_version"
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"

@@ -23,6 +23,11 @@ class SplashActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
     }
 
+    override fun onResume() {
+        super.onResume()
+        routeTo()
+    }
+
     /**
      * launches specific activities base on the conditions
      */

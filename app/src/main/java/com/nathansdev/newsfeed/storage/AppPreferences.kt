@@ -26,7 +26,7 @@ class AppPreferences(app: Application) {
     }
 
     fun isFirstTimeLaunch(): Boolean {
-        return sharedPreferences.getBoolean(IS_FIRST_TIME_LAUNCH, false)
+        return sharedPreferences.getBoolean(IS_FIRST_TIME_LAUNCH, true)
     }
 
     fun setIsFirstTimeLaunch(isFirstTimeLaunch: Boolean) {
