@@ -5,12 +5,12 @@
     <string name="image">image</string>
     <string name="ok">OK</string>
     <string name="start">start</string>
-    <string name="slide_1_title">Hello Food!</string>
-    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+    <string name="screen_one_title">News Letter</string>
+    <string name="screen_one_desc">Get News Letter based on settings you opt in</string>
 
-    <string name="slide_2_title">Movie Tickets</string>
-    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+    <string name="screen_two_title">Notification</string>
+    <string name="screen_two_desc">Receive instant notification for every news</string>
 
-    <string name="slide_3_title">Great Discounts</string>
-    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+    <string name="screen_three_title">Mail</string>
+    <string name="screen_three_desc">Receive mail for important and trending news around the world</string>
 </resources>

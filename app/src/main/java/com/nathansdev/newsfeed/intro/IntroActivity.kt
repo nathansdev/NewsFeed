@@ -85,7 +85,6 @@ class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
 
     override fun onPageSelected(position: Int) {
         changeCurrentViewDots(position)
-
         if (position == introPagerAdapter.count - 1) {
             btn_next.text = getString(R.string.start)
             btn_skip.visibility = View.GONE
