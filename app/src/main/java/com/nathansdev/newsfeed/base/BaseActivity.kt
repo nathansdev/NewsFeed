@@ -24,6 +24,7 @@ abstract class BaseActivity : AppCompatActivity(), MvpView {
     }
 
     override fun showMessageInToast(message: String) {
+
     }
 
     override fun showMessageInDialog(message: String) {
