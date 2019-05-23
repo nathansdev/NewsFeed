@@ -41,6 +41,7 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidx_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
     implementation "com.google.android.material:material:1.1.0-alpha06"
+    implementation "androidx.recyclerview:recyclerview:1.1.0-alpha05"
 
     //kotlin
     compile "androidx.core:core-ktx:$androidktx_version"
