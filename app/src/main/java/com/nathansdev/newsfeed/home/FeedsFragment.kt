@@ -13,7 +13,10 @@ import com.nathansdev.newsfeed.rxevent.RxEventBus
 import kotlinx.android.synthetic.main.fragment_layout_feeds_list.*
 import javax.inject.Inject
 
-class FeedFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
+/**
+ * Feeds Fragment with list of news.
+ */
+class FeedsFragment @Inject constructor() : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
 
     @Inject
     lateinit var eventBus: RxEventBus

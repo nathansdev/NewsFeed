@@ -1,6 +1,7 @@
 package com.nathansdev.newsfeed.di
 
 import com.nathansdev.newsfeed.home.HomeActivity
+import com.nathansdev.newsfeed.home.HomeActivityModule
 import com.nathansdev.newsfeed.intro.IntroActivity
 import com.nathansdev.newsfeed.login.LoginActivity
 import com.nathansdev.newsfeed.splash.SplashActivity
@@ -19,7 +20,7 @@ abstract class ActivityBuilderModule {
     @ContributesAndroidInjector()
     abstract fun bindIntroActivity(): IntroActivity
 
-    @ContributesAndroidInjector()
+    @ContributesAndroidInjector(modules = [HomeActivityModule::class])
     abstract fun bindHomeActivity(): HomeActivity
 
     @ContributesAndroidInjector()

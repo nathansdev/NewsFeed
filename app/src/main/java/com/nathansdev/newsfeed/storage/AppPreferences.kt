@@ -38,4 +38,8 @@ class AppPreferences(app: Application) {
     fun saveUserNameAndPassword(name: String, password: String) {
         sharedPreferences.edit().putString(USER_NAME, name).putString(PASSWORD, password).apply()
     }
+
+    fun deleteUserNameAndPassword() {
+        sharedPreferences.edit().remove(USER_NAME).remove(PASSWORD).apply()
+    }
 }

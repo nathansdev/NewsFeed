@@ -18,4 +18,5 @@
     <string name="screen_three_title">Mail</string>
     <string name="screen_three_desc">Receive mail for important and trending news around the world</string>
     <string name="newspaper">NewsPaper</string>
+    <string name="logout">logout</string>
 </resources>
