@@ -11,7 +11,7 @@ buildscript {
         timber_version = '4.7.1'
         okhttp_version = '3.12.1'
         interceptor_version = '3.10.0'
-        retrofit_version = '2.3.0'
+        retrofit_version = '2.5.0'
         rxjava2_version = '2.1.12'
         rxandroid_version = '2.0.1'
         glide_version = '4.9.0'

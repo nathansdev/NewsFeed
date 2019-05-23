@@ -2,6 +2,7 @@ package com.nathansdev.newsfeed.di
 
 import com.nathansdev.newsfeed.home.HomeActivity
 import com.nathansdev.newsfeed.intro.IntroActivity
+import com.nathansdev.newsfeed.login.LoginActivity
 import com.nathansdev.newsfeed.splash.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -20,4 +21,7 @@ abstract class ActivityBuilderModule {
 
     @ContributesAndroidInjector()
     abstract fun bindHomeActivity(): HomeActivity
+
+    @ContributesAndroidInjector()
+    abstract fun bindLoginActivity(): LoginActivity
 }

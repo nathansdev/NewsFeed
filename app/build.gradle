@@ -40,6 +40,7 @@ dependencies {
     //support libraries
     implementation "androidx.appcompat:appcompat:$androidx_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayout_version"
+    implementation "com.google.android.material:material:1.1.0-alpha06"
 
     //kotlin
     compile "androidx.core:core-ktx:$androidktx_version"
@@ -52,10 +53,10 @@ dependencies {
     api "com.squareup.okhttp3:okhttp:$okhttp_version"
     api "com.squareup.okhttp3:logging-interceptor:$interceptor_version"
 
-    // Retrofit with Gson and rxJava Adapters
+    // Retrofit with Xml and rxJava Adapters
     compile "com.squareup.retrofit2:retrofit:$retrofit_version"
     compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-simplexml:$retrofit_version"
 
     // RxJava and RxAndroid
     compile "io.reactivex.rxjava2:rxjava:$rxjava2_version"

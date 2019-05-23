@@ -11,6 +11,8 @@ class AppPreferences(app: Application) {
     private val PREFS_NAME = "app-prefs"
     private val IS_LOGGEDIN = "isLoggedIn"
     private val IS_FIRST_TIME_LAUNCH = "isFirstTimeLaunch"
+    private val USER_NAME = "username"
+    private val PASSWORD = "password"
     private var sharedPreferences: SharedPreferences
 
     init {
@@ -31,5 +33,9 @@ class AppPreferences(app: Application) {
 
     fun setIsFirstTimeLaunch(isFirstTimeLaunch: Boolean) {
         sharedPreferences.edit().putBoolean(IS_FIRST_TIME_LAUNCH, isFirstTimeLaunch).apply()
+    }
+
+    fun saveUserNameAndPassword(name: String, password: String) {
+        sharedPreferences.edit().putString(USER_NAME, name).putString(PASSWORD, password).apply()
     }
 }

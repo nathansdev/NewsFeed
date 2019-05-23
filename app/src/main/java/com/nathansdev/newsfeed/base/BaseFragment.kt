@@ -16,7 +16,7 @@ import dagger.android.support.AndroidSupportInjection
 abstract class BaseFragment : Fragment(), MvpView {
     private var baseActivity: BaseActivity? = null
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             AndroidSupportInjection.inject(this)
         }

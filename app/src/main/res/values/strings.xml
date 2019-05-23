@@ -5,6 +5,10 @@
     <string name="image">image</string>
     <string name="ok">OK</string>
     <string name="start">start</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
     <string name="screen_one_title">News Letter</string>
     <string name="screen_one_desc">Get News Letter based on settings you opt in</string>
 
