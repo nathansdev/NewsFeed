@@ -19,7 +19,7 @@ class SplashActivity : BaseActivity() {
     lateinit var appPreferences: AppPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme_Launcher)
+        setTheme(R.style.LauncherTheme)
         super.onCreate(savedInstanceState)
     }
 

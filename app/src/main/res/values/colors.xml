@@ -2,7 +2,7 @@
 <resources>
     <!-- Theme color-->
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorPrimaryDark">#cccccc</color>
     <color name="colorAccent">#6c63ff</color>
 
     <!-- Screens background color-->
