@@ -35,7 +35,7 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_marginTop="?android:attr/actionBarSize"
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -47,7 +47,7 @@
             android:layout_height="match_parent" />
 
         <include layout="@layout/layout_screen_mask_with_loader" />
-    </LinearLayout>
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/feeds_detail_view_container"

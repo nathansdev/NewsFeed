@@ -85,7 +85,7 @@ class HomeActivity : BaseActivity() {
 
     private fun handleFeedRowClicked(feed: Feed) {
         Utils.captureTransitionSlide(root)
-        feeds_detail_view_container.setVisibility(View.VISIBLE)
+        feeds_detail_view_container.visibility = View.VISIBLE
         detailedFeedFragment.handleVisible(feed)
     }
 
