@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import com.nathansdev.newsfeed.R
 
-
+/**
+ * Pager adapter to show slide intros
+ */
 class IntroPagerAdapter(private val context: Context) : PagerAdapter() {
 
     private val screens = arrayOf(R.layout.layout_intro_screen_one, R.layout.layout_intro_screen_two,

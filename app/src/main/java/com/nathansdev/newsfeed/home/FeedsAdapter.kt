@@ -12,6 +12,9 @@ import com.nathansdev.newsfeed.rxevent.AppEvents
 import com.nathansdev.newsfeed.rxevent.RxEventBus
 import com.nathansdev.newsfeed.utils.Utils
 
+/**
+ * a recyclerview adapter to display list of news
+ */
 class FeedsAdapter(rxEventBus: RxEventBus) : RecyclerView.Adapter<FeedsViewHolder>() {
 
     private var items: ArrayList<Feed>
@@ -45,6 +48,9 @@ class FeedsAdapter(rxEventBus: RxEventBus) : RecyclerView.Adapter<FeedsViewHolde
     }
 }
 
+/**
+ * Adapter view for single row in recyclerview
+ */
 class FeedsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         RecyclerView.ViewHolder(inflater.inflate(R.layout.adapter_item_news_feed, parent, false)) {
     private var feedTitle: TextView? = null

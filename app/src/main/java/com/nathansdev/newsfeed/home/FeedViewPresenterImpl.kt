@@ -14,6 +14,9 @@ import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * implementer class for feeds fragment handles all data
+ */
 class FeedViewPresenterImpl<V : FeedsView> @Inject constructor(val api: NewsApi) : BasePresenter<V>(), FeedsPresenter<V> {
     private val newsSubject = PublishProcessor.create<Long>()
     private val disposables = CompositeDisposable()

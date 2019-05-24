@@ -10,6 +10,9 @@ import dagger.android.HasActivityInjector
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * Root Application class
+ */
 class MyNewsApp : Application(), HasActivityInjector {
 
     @Inject

@@ -45,6 +45,9 @@ class HomeActivity : BaseActivity() {
         setUpViews()
     }
 
+    /**
+     * doing rx subscription to handle all events in activity
+     */
     private fun setUpSubscription() {
         disposables.add(rxEventBus.toObservables()
                 .onErrorReturn { throwable ->
@@ -60,6 +63,9 @@ class HomeActivity : BaseActivity() {
         )
     }
 
+    /**
+     * handles the received events
+     */
     private fun handleEventData(event: Pair<String, Any>?) {
         when (event?.first) {
             AppEvents.LOG_OUT_CLICKED -> handleLogOutClicked()
@@ -83,6 +89,9 @@ class HomeActivity : BaseActivity() {
         detailedFeedFragment.handleVisible(feed)
     }
 
+    /**
+     * routes to logout page after successfull logout
+     */
     private fun routeToLogin() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)

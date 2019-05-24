@@ -12,6 +12,9 @@ import javax.inject.Singleton
     AppModule::class,
     ApiModule::class,
     ActivityBuilderModule::class])
+/**
+ * Generates all dagger instances for the required objects.
+ */
 interface AppComponent {
     @Component.Builder
     interface Builder {

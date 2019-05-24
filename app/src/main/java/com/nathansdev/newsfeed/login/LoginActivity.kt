@@ -36,6 +36,9 @@ class LoginActivity : BaseActivity() {
         changeStatusBarBackground()
     }
 
+    /**
+     * handles login button click
+     */
     private fun onLoginClicked() {
         btn_login.isEnabled = false
         progress_mask.visibility = View.VISIBLE
@@ -55,12 +58,18 @@ class LoginActivity : BaseActivity() {
         }
     }
 
+    /**
+     * routes to home page after login
+     */
     private fun routeToHome() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()
     }
 
+    /**
+     * does login validation
+     */
     private fun validate(): Boolean {
         var valid = true
 
@@ -83,6 +92,9 @@ class LoginActivity : BaseActivity() {
         return valid
     }
 
+    /**
+     * makes the status bar background
+     */
     private fun changeStatusBarBackground() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val window = window

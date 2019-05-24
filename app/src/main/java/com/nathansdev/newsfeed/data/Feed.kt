@@ -1,5 +1,7 @@
 package com.nathansdev.newsfeed.data
-
+/**
+ * data class for holding feed row adapter data.
+ */
 data class Feed(
         val pageTitle: String = "",
         val title: String = "",

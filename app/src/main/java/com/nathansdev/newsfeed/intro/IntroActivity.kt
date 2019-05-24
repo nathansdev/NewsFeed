@@ -46,6 +46,9 @@ class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
         changeStatusBarBackground()
     }
 
+    /**
+     * handles intro slide next click
+     */
     private fun onNextClicked() {
         val current = getCurrentItem(+1)
         if (current < introPagerAdapter.count) {
@@ -55,6 +58,9 @@ class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
+    /**
+     * handles intro slide skip click
+     */
     private fun onSkipClicked() {
         routeTo()
     }
@@ -98,6 +104,9 @@ class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
         return view_pager.currentItem + i
     }
 
+    /**
+     * changes the dots view on slide change
+     */
     private fun changeCurrentViewDots(position: Int) {
         val colorsActive = resources.getIntArray(R.array.array_dot_active)
         val colorsInactive = resources.getIntArray(R.array.array_dot_inactive)
@@ -117,6 +126,9 @@ class IntroActivity : BaseActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
+    /**
+     * makes the status bar background
+     */
     private fun changeStatusBarBackground() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val window = window

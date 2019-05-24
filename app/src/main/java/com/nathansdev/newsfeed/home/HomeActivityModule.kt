@@ -6,6 +6,9 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
+/**
+ * Home module provides all fragments and implementer instances
+ */
 abstract class HomeActivityModule {
 
     @PerFragment

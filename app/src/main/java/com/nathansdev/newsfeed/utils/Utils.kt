@@ -17,6 +17,9 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.nathansdev.newsfeed.GlideApp
 import com.nathansdev.newsfeed.R
 
+/**
+ * app utils class
+ */
 object Utils {
     const val NEW_API = "NewApi"
 
