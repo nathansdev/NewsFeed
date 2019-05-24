@@ -13,11 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:theme="@style/Widget.Design.AppBarLayout"
         app:elevation="5dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            android:theme="@style/Widget.MaterialComponents.Toolbar.Surface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true">

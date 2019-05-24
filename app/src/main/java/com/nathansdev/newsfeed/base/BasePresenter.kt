@@ -4,7 +4,7 @@ package com.nathansdev.newsfeed.base
  * Base class than implements presenter interface and provides base implementation for
  * any view being attached.
  */
-class BasePresenter<V : MvpView> : MvpPresenter<V> {
+open class BasePresenter<V : MvpView> : MvpPresenter<V> {
     private var mMvpView: V? = null
 
     override fun onAttach(mvpView: V) {

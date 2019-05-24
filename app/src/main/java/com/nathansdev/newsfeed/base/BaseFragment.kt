@@ -53,6 +53,10 @@ abstract class BaseFragment : Fragment(), MvpView {
         dialogBuilder?.show()
     }
 
+    override fun onError(message: String) {
+
+    }
+
     fun getBaseActivity(): BaseActivity? {
         return baseActivity
     }

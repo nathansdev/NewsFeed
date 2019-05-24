@@ -7,4 +7,6 @@ interface MvpView {
     fun showMessageInDialog(message: String)
 
     fun showMessageInToast(message: String)
+
+    fun onError(message: String)
 }

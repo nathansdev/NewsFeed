@@ -27,7 +27,6 @@ class HomeActivity : BaseActivity() {
 
     @Inject
     lateinit var rxEventBus: RxEventBus
-
     @Inject
     lateinit var feedsFragment: FeedsFragment
     @Inject
@@ -91,9 +90,11 @@ class HomeActivity : BaseActivity() {
         supportFragmentManager
                 .beginTransaction()
                 .add(R.id.feeds_container, feedsFragment, AppConstants.FRAG_TAG_FEEDS_LIST)
+                .commit()
         supportFragmentManager
                 .beginTransaction()
                 .add(R.id.feeds_detail_view_container, detailedFeedFragment, AppConstants.FRAG_TAG_FEEDS_DETAIL_VIEW)
+                .commit()
         feeds_detail_view_container.visibility = View.INVISIBLE
     }
 
@@ -108,5 +109,14 @@ class HomeActivity : BaseActivity() {
 
     private fun handleBackPressed() {
         super.onBackPressed()
+    }
+
+    /**
+     * Return Profile fragment by tag.
+     *
+     * @return Profile fragment.
+     */
+    private fun getFeedsFrag(): FeedsFragment {
+        return supportFragmentManager.findFragmentByTag(AppConstants.FRAG_TAG_FEEDS_LIST) as FeedsFragment
     }
 }

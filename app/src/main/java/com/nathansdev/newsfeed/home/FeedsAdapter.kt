@@ -7,9 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nathansdev.newsfeed.R
 import com.nathansdev.newsfeed.data.Feed
 
-class FeedAdapter() : RecyclerView.Adapter<FeedsViewHolder>() {
+class FeedsAdapter : RecyclerView.Adapter<FeedsViewHolder>() {
 
-    lateinit var items: ArrayList<Feed>
+    var items: ArrayList<Feed>
+
+    init {
+        items = ArrayList()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -28,6 +32,10 @@ class FeedAdapter() : RecyclerView.Adapter<FeedsViewHolder>() {
     fun setData(data: ArrayList<Feed>) {
         items = data
     }
+
+    fun handleDestroy(){
+        items.clear()
+    }
 }
 
 class FeedsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
@@ -35,14 +43,13 @@ class FeedsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     private var feedTitle: TextView? = null
     private var feedDesc: TextView? = null
 
-
     init {
         feedTitle = itemView.findViewById(R.id.text_view_feed_title)
         feedDesc = itemView.findViewById(R.id.text_view_feed_desc)
     }
 
-    fun bind(movie: Feed) {
-        feedTitle?.text = movie.title
-        feedDesc?.text = movie.description
+    fun bind(feed: Feed) {
+        feedTitle?.text = feed.title
+        feedDesc?.text = feed.description
     }
 }

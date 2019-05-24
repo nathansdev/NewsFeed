@@ -52,4 +52,8 @@ abstract class BaseActivity : AppCompatActivity(), HasSupportFragmentInjector, M
                 .setCancelable(true)
         dialogBuilder.show()
     }
+
+    override fun onError(message: String) {
+
+    }
 }
