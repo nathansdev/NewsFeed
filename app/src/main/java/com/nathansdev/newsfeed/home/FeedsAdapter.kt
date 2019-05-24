@@ -1,18 +1,23 @@
 package com.nathansdev.newsfeed.home
 
+import android.util.Pair
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nathansdev.newsfeed.R
 import com.nathansdev.newsfeed.data.Feed
+import com.nathansdev.newsfeed.rxevent.AppEvents
+import com.nathansdev.newsfeed.rxevent.RxEventBus
 
-class FeedsAdapter : RecyclerView.Adapter<FeedsViewHolder>() {
+class FeedsAdapter(rxEventBus: RxEventBus) : RecyclerView.Adapter<FeedsViewHolder>() {
 
-    var items: ArrayList<Feed>
+    private var items: ArrayList<Feed>
+    private val eventBus: RxEventBus
 
     init {
         items = ArrayList()
+        eventBus = rxEventBus
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedsViewHolder {
@@ -26,7 +31,7 @@ class FeedsAdapter : RecyclerView.Adapter<FeedsViewHolder>() {
 
     override fun onBindViewHolder(holder: FeedsViewHolder, position: Int) {
         val movie: Feed = items[position]
-        holder.bind(movie)
+        holder.bind(movie, eventBus)
     }
 
     fun setData(data: ArrayList<Feed>) {
@@ -48,8 +53,11 @@ class FeedsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         feedDesc = itemView.findViewById(R.id.text_view_feed_desc)
     }
 
-    fun bind(feed: Feed) {
+    fun bind(feed: Feed, rxEventBus: RxEventBus) {
         feedTitle?.text = feed.title
         feedDesc?.text = feed.description
+        feedDesc?.setOnClickListener {
+            rxEventBus.send(Pair(AppEvents.FEED_ROW_CLICKED, feed))
+        }
     }
 }

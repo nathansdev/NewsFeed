@@ -7,11 +7,13 @@ import android.util.Pair
 import android.view.View
 import com.nathansdev.newsfeed.R
 import com.nathansdev.newsfeed.base.BaseActivity
+import com.nathansdev.newsfeed.data.Feed
 import com.nathansdev.newsfeed.login.LoginActivity
 import com.nathansdev.newsfeed.rxevent.AppConstants
 import com.nathansdev.newsfeed.rxevent.AppEvents
 import com.nathansdev.newsfeed.rxevent.RxEventBus
 import com.nathansdev.newsfeed.storage.AppPreferences
+import com.nathansdev.newsfeed.utils.Utils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -29,7 +31,7 @@ class HomeActivity : BaseActivity() {
     lateinit var rxEventBus: RxEventBus
     @Inject
     lateinit var feedsFragment: FeedsFragment
-    @Inject
+    @Injectl
     lateinit var detailedFeedFragment: DetailedFeedFragment
     @Inject
     lateinit var appPreferences: AppPreferences
@@ -61,6 +63,8 @@ class HomeActivity : BaseActivity() {
     private fun handleEventData(event: Pair<String, Any>?) {
         when (event?.first) {
             AppEvents.LOG_OUT_CLICKED -> handleLogOutClicked()
+            AppEvents.FEED_ROW_CLICKED -> handleFeedRowClicked(event.second as Feed)
+            AppEvents.BACK_PRESSED -> handleBackPressed()
             else -> {
             }
         }
@@ -71,6 +75,12 @@ class HomeActivity : BaseActivity() {
         appPreferences.deleteUserNameAndPassword()
         appPreferences.setIsLoggedIn(false)
         Handler().postDelayed(Runnable { routeToLogin() }, 2000)
+    }
+
+    private fun handleFeedRowClicked(feed: Feed) {
+        Utils.captureTransitionSlide(root)
+        feeds_detail_view_container.setVisibility(View.VISIBLE)
+        detailedFeedFragment.handleVisible(feed)
     }
 
     private fun routeToLogin() {
@@ -108,7 +118,12 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun handleBackPressed() {
-        super.onBackPressed()
+        if (feeds_detail_view_container.visibility == View.VISIBLE) {
+            Utils.captureTransitionSlide(root)
+            feeds_detail_view_container.setVisibility(View.INVISIBLE)
+        } else {
+            super.onBackPressed()
+        }
     }
 
     /**

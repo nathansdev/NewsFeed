@@ -18,6 +18,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            app:contentInsetStart="0dp"
             android:theme="@style/Widget.MaterialComponents.Toolbar.Surface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,8 +34,10 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
+    <LinearLayout
+        android:layout_marginTop="?android:attr/actionBarSize"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent">
 
         <FrameLayout
@@ -42,11 +45,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <FrameLayout
-            android:id="@+id/feeds_detail_view_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </FrameLayout>
+        <include layout="@layout/layout_screen_mask_with_loader" />
+    </LinearLayout>
 
-    <include layout="@layout/layout_screen_mask_with_loader" />
+    <FrameLayout
+        android:id="@+id/feeds_detail_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

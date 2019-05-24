@@ -1,5 +1,6 @@
 package com.nathansdev.newsfeed.home
 
+import com.nathansdev.newsfeed.di.PerFragment
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -7,9 +8,11 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class HomeActivityModule {
 
+    @PerFragment
     @ContributesAndroidInjector
     abstract fun provideFeedsFragmentFactory(): FeedsFragment
 
+    @PerFragment
     @ContributesAndroidInjector
     abstract fun provideDetailedFeedFragmentFactory(): DetailedFeedFragment
 

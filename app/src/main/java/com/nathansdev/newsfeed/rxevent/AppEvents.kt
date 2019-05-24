@@ -6,4 +6,5 @@ package com.nathansdev.newsfeed.rxevent
 object AppEvents {
     const val LOG_OUT_CLICKED = "logOutClicked"
     const val FEED_ROW_CLICKED = "feedRowClicked"
+    const val BACK_PRESSED = "backPressed"
 }

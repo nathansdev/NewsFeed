@@ -1,6 +1,7 @@
 package com.nathansdev.newsfeed.di
 
 import android.app.Application
+import com.nathansdev.newsfeed.rxevent.RxEventBus
 import com.nathansdev.newsfeed.storage.AppPreferences
 import dagger.Module
 import dagger.Provides
@@ -15,6 +16,12 @@ class AppModule {
     @Provides
     @Singleton
     fun provideAppPreferences(application: Application): AppPreferences {
-        return AppPreferences(application);
+        return AppPreferences(application)
+    }
+
+    @Provides
+    @Singleton
+    fun provideRxEventBus(): RxEventBus {
+        return RxEventBus()
     }
 }

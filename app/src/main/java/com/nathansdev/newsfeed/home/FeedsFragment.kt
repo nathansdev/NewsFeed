@@ -10,6 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.nathansdev.newsfeed.R
 import com.nathansdev.newsfeed.base.BaseFragment
 import com.nathansdev.newsfeed.data.Feed
+import com.nathansdev.newsfeed.rxevent.RxEventBus
 import kotlinx.android.synthetic.main.fragment_layout_feeds_list.*
 import timber.log.Timber
 import javax.inject.Inject
@@ -21,7 +22,9 @@ class FeedsFragment @Inject constructor() : BaseFragment(), SwipeRefreshLayout.O
 
     @Inject
     lateinit var presenter: FeedsPresenter<FeedsView>
-    lateinit var feedAdapter: FeedsAdapter
+    @Inject
+    lateinit var rxEventBus: RxEventBus
+    lateinit var feedsAdapter: FeedsAdapter
     lateinit var linearLayoutManager: LinearLayoutManager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,10 +36,10 @@ class FeedsFragment @Inject constructor() : BaseFragment(), SwipeRefreshLayout.O
         Timber.d("setUpView")
         linearLayoutManager = LinearLayoutManager(activity)
         linearLayoutManager.orientation = RecyclerView.VERTICAL
-        feedAdapter = FeedsAdapter()
+        feedsAdapter = FeedsAdapter(rxEventBus)
         feeds_recycler.apply {
             layoutManager = linearLayoutManager;
-            adapter = feedAdapter
+            adapter = feedsAdapter
         }
         feeds_refresh_layout.setOnRefreshListener(this)
         presenter.init()
@@ -50,8 +53,8 @@ class FeedsFragment @Inject constructor() : BaseFragment(), SwipeRefreshLayout.O
 
     override fun onNewsLoaded(feeds: ArrayList<Feed>) {
         feeds_refresh_layout.isRefreshing = false
-        feedAdapter.setData(feeds)
-        feedAdapter.notifyDataSetChanged()
+        feedsAdapter.setData(feeds)
+        feedsAdapter.notifyDataSetChanged()
     }
 
     override fun onError(message: String) {
@@ -62,7 +65,7 @@ class FeedsFragment @Inject constructor() : BaseFragment(), SwipeRefreshLayout.O
         if (feeds_refresh_layout != null) {
             feeds_refresh_layout.setOnRefreshListener(null)
         }
-        feedAdapter.handleDestroy()
+        feedsAdapter.handleDestroy()
         super.onDestroyView()
     }
 }
