@@ -7,9 +7,9 @@
     <application
         android:allowBackup="true"
         android:name=".MyNewsApp"
-        android:icon="@drawable/ic_news_paper"
+        android:icon="@drawable/ic_news_paper_blue"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_news_paper"
+        android:roundIcon="@drawable/ic_news_paper_blue"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".splash.SplashActivity">

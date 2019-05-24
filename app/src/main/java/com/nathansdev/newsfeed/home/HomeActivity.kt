@@ -31,7 +31,7 @@ class HomeActivity : BaseActivity() {
     lateinit var rxEventBus: RxEventBus
     @Inject
     lateinit var feedsFragment: FeedsFragment
-    @Injectl
+    @Inject
     lateinit var detailedFeedFragment: DetailedFeedFragment
     @Inject
     lateinit var appPreferences: AppPreferences
@@ -124,14 +124,5 @@ class HomeActivity : BaseActivity() {
         } else {
             super.onBackPressed()
         }
-    }
-
-    /**
-     * Return Profile fragment by tag.
-     *
-     * @return Profile fragment.
-     */
-    private fun getFeedsFrag(): FeedsFragment {
-        return supportFragmentManager.findFragmentByTag(AppConstants.FRAG_TAG_FEEDS_LIST) as FeedsFragment
     }
 }

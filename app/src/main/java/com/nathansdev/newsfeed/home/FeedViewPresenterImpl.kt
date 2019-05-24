@@ -36,7 +36,7 @@ class FeedViewPresenterImpl<V : FeedsView> @Inject constructor(val api: NewsApi)
         val feeds = ArrayList<Feed>()
         if (response.channel.articles.isNotEmpty()) {
             for (article: Article in response.channel.articles)
-                feeds.add(Feed(article.title, article.description, article.link, article.enclosure.url))
+                feeds.add(Feed(response.channel.title, article.title, article.description, article.link, article.enclosure.url))
         }
         Timber.d("feed loaded %s", feeds.size)
         getMvpView()?.onNewsLoaded(feeds)

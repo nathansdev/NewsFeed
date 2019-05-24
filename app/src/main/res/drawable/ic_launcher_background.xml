@@ -12,6 +12,6 @@
 
         <bitmap
             android:gravity="center"
-            android:src="@drawable/bg_image_news_go" />
+            android:src="@drawable/ic_news_paper_blue" />
     </item>
 </layer-list>
