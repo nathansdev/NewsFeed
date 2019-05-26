@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_news_paper_blue"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_config"
         android:theme="@style/AppTheme">
         <activity android:name=".splash.SplashActivity">
             <intent-filter>
