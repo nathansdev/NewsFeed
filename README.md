@@ -18,11 +18,11 @@ NewsFeed is an android sample application built using kotlin, androidx artifacts
 
 ## Screenshots
 
-<img src="https://github.com/nathansdev/StackQuery/blob/master/screenshots/Screenshot_2019-05-25-00-26-05-759_com.nathansdev.newsfeed.png" width="425"/> <img src="https://github.com/nathansdev/StackQuery/blob/master/screenshots/Screenshot_2019-05-25-00-26-09-839_com.nathansdev.newsfeed.png" width="425"/>
+<img src="https://github.com/nathansdev/NewsFeed/blob/master/screenshots/Screenshot_2019-05-25-00-26-05-759_com.nathansdev.newsfeed.png" width="425"/> <img src="https://github.com/nathansdev/NewsFeed/blob/master/screenshots/Screenshot_2019-05-25-00-26-09-839_com.nathansdev.newsfeed.png" width="425"/>
 
-<img src="https://github.com/nathansdev/StackQuery/blob/master/screenshots/Screenshot_2019-05-25-00-26-54-057_com.nathansdev.newsfeed.png" width="425"/> <img src="https://github.com/nathansdev/StackQuery/blob/master/screenshots/Screenshot_2019-05-25-00-27-21-358_com.nathansdev.newsfeed.png" width="425"/>
+<img src="https://github.com/nathansdev/NewsFeed/blob/master/screenshots/Screenshot_2019-05-25-00-26-20-748_com.nathansdev.newsfeed.png" width="425"/> <img src="https://github.com/nathansdev/NewsFeed/blob/master/screenshots/Screenshot_2019-05-25-00-26-54-057_com.nathansdev.newsfeed.png" width="425"/>
 
-<img src="Screenshot_2019-05-25-00-27-21-358_com.nathansdev.newsfeed.png" width="425"/>
+<img src="https://github.com/nathansdev/NewsFeed/blob/master/screenshots/Screenshot_2019-05-25-00-27-21-358_com.nathansdev.newsfeed.png" width="425"/>
 
 
 
